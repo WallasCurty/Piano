@@ -1,4 +1,4 @@
-const key = document.querySelectorAll('.key');
+const keys = document.querySelectorAll('.key');
 const checkbox = document.querySelectorAll('.checkbox__keys')
 const switcher = document.querySelectorAll('.switcher')
 const keysSection = document.querySelectorAll('.piano__keys')
@@ -34,15 +34,15 @@ keys.forEach((key) => {
     key.addEventListener('mouseup', () => handleMouseUp(key))
 });
 
-checkbox.addEventListener('change', ({target}) => {
-    if(target.checked){
+checkbox.addEventListener('change', ({ target }) => {
+    if (target.checked) {
         switcher.classList.add('switcher--active');
         keysSection.classList.remove('disabled-keys');
         return;
     }
+
     switcher.classList.remove('switcher--active');
     keysSection.classList.add('disabled-keys');
-
 });
 
 const keyDownMapper = {
